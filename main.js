@@ -10,7 +10,6 @@ const oneTimePass = () => {
 
     if (Passward == passward) {
       isOnePassword = true;
-      alert("Correct password");
     } else {
       alert("Invalid passward");
     }
