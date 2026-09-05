@@ -4,12 +4,13 @@ let historyTrans = [];
 let isOnePassword = false;
 let isShowBalance = false;
 let span = document.querySelector("#Balance");
+let register = document.querySelector("#Register");
 
 const oneTimePass = () => {
   if (isOnePassword == false) {
     let Passward = prompt("Enter passward");
-
     if (Passward == passward) {
+      register.innerHTML = `<button class="btn btn-success">Registered</button>`;
       isOnePassword = true;
     } else {
       alert("Invalid passward");
@@ -30,6 +31,7 @@ const changePassword = () => {
     else {
       passward = newPassword;
       alert("Pasword is changed");
+      register.innerHTML = `<button class="btn btn-danger">Unregistered</button>`;
       isOnePassword = false;
       span.innerHTML = `<span id="Balance">**** EGP</span>`;
       isShowBalance = false;
