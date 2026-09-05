@@ -2,6 +2,7 @@ let balance = 0;
 let passward = "1234";
 let historyTrans = [];
 let isOnePassword = false;
+let isShowBalance = false;
 let span = document.querySelector("#Balance");
 
 const oneTimePass = () => {
@@ -15,11 +16,36 @@ const oneTimePass = () => {
     }
   }
 };
-const showBalance = () => {
+
+const changePassword = () => {
   oneTimePass();
   if (isOnePassword) {
-    span.innerHTML = `
+    let input = document.querySelector("#Password");
+    let newPassword = input.value;
+    input.value = "";
+    if (newPassword === "") alert("New password not can be empty");
+    else if (newPassword.length < 4)
+      alert("New passowrd must be at least 4 letters");
+    else if (newPassword === passward) alert("This password is used");
+    else {
+      passward = newPassword;
+      alert("Pasword is changed");
+      isOnePassword = false;
+    }
+  }
+};
+
+const showAndHideBalance = () => {
+  oneTimePass();
+  if (isOnePassword) {
+    if (!isShowBalance) {
+      span.innerHTML = `
     <span id="Balance" type="number">${balance} EGP</span>`;
+      isShowBalance = true;
+    } else {
+      span.innerHTML = `<span id="Balance">**** EGP</span>`;
+      isShowBalance = false;
+    }
   }
 };
 
