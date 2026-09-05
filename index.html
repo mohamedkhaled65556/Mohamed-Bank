@@ -13,10 +13,29 @@
   </head>
   <body>
     <section>
-      <div class="text-center">
+      <div class="text-end mt-2">
+        <input
+          type="password"
+          id="Password"
+          class="btn btn-outline-secondary"
+          placeholder="Enter new password"
+        />
+        <button
+          type="button"
+          class="btn btn-secondary"
+          onclick="changePassword()"
+        >
+          Change Password
+        </button>
+      </div>
+      <div class="text-center mt-3">
         <h3>Balance is <span id="Balance">**** EGP</span></h3>
-        <button type="button" class="btn btn-primary" onclick="showBalance()">
-          Show Balance
+        <button
+          type="button"
+          class="btn btn-primary"
+          onclick="showAndHideBalance()"
+        >
+          Show/Hide Balance
         </button>
       </div>
       <div class="text-center mt-4">
@@ -28,7 +47,6 @@
         />
         <button class="btn btn-success" onclick="Deposite()">Deposite</button>
       </div>
-
       <div class="text-center mt-3">
         <input
           placeholder="Enter amount"
