@@ -5,6 +5,7 @@ let isOnePassword = false;
 let isShowBalance = false;
 let span = document.querySelector("#Balance");
 let register = document.querySelector("#Register");
+let table = document.querySelector("#Transaction");
 
 const oneTimePass = () => {
   if (isOnePassword == false) {
@@ -35,6 +36,7 @@ const changePassword = () => {
       isOnePassword = false;
       span.innerHTML = `<span id="Balance">**** EGP</span>`;
       isShowBalance = false;
+      table.innerHTML = "";
     }
   }
 };
@@ -100,7 +102,6 @@ const Withdraw = () => {
 const historyTransaction = () => {
   oneTimePass();
   if (isOnePassword) {
-    let table = document.querySelector("#Transaction");
     table.innerHTML = "";
     historyTrans.forEach((el, index) => {
       table.innerHTML += `<tr class="table-dark">
