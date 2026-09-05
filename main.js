@@ -26,7 +26,7 @@ const changePassword = () => {
     if (newPassword === "") alert("New password not can be empty");
     else if (newPassword.length < 4)
       alert("New passowrd must be at least 4 letters");
-    else if (newPassword === passward) alert("This password is used Before");
+    else if (newPassword === passward) alert("This password is used before");
     else {
       passward = newPassword;
       alert("Pasword is changed");
