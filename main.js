@@ -31,6 +31,8 @@ const changePassword = () => {
       passward = newPassword;
       alert("Pasword is changed");
       isOnePassword = false;
+      span.innerHTML = `<span id="Balance">**** EGP</span>`;
+      isShowBalance = false;
     }
   }
 };
